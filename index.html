@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSHANDSON FOURTH ARRAY</title>
+</head>
+<body><pre>
+    Question 1.Find the Product.
+    Write a program that takes an array as input from the user and find out the product of the elements.
+    Answer 1.const Find_Prod = (array, N) => 
+    {
+    const res=array.reduce((accu,cur)=>accu=accu*cur,1)
+    return res;
+    };
+    Question 2.Find the Sum.
+    Write a program which takes an array as input from the user and find out the sum of the array elements.
+    Answer 2.const Find_Sum = (array, N) => 
+    {
+    const res=array.reduce((accu,cur)=>accu=accu+cur)
+    return res;
+    };
+    Question 3.Count Occurrences
+    You are given an array A containing N integer elements and an integer K, and your task is to return the count of occurrences of K in array A.
+    Answer 3.const findCount = (N, K, Arr) => 
+    {
+     let count=0;
+    for(let i=0;i<=N;i++){
+      if(Arr[i]==K){
+        count=count+1;
+      }
+    }
+    return count;
+    };
+    Question 4.Even Odd
+    You are given an array A containing  N integer elements, and your task is to return an array B(having a size equal to 2), where B[0] contains the sum of all even elements of array A and  B[1] has the sum of all odd elements of the array A.
+    Answer 4.const findEvenOdd = (N, Arr) => 
+    {
+       let B=[]
+       var a=Arr.filter((x)=>x%2===0)
+      var b=a.reduce((accu,cum)=>accu=accu+cum,0)
+      B.push(b);
+    
+        var c=Arr.filter((x)=>x%2!==0)
+      var d=c.reduce((accu,cum)=>accu=accu+cum,0)
+      B.push(d);
+        return B;
+    };
+    Question 5.Find whether the number is present or not
+    Write a program which takes an array as input from the user and a number.
+    Check whether the number is present or not.
+    Answer 5.
+    const Find_Num = (array,N,M) => 
+    {
+      let count=0;
+      for(let i=0;i<=N;i++){
+      if(array[i]==M){
+        count=1;
+      }
+      }
+      if(count==1){
+        return "YES";
+      }
+      else{
+        return "NO";
+      } 
+    };
+    Question 6.Higher Age
+    You are given an array A
+     containing the age of persons in your locality, and your task is to find and return an array containing the age of persons that are over 18(18 included).
+    Answer 6.
+    const highAge = (N, Arr) => 
+    {
+        const b=Arr.filter((N)=> N>=18);
+        return b;
+    };
+ Question 7.Increment the Array Elements
+ You are provided an array of integers and you have to increment all array elements by 1 and then print whole array.
+ Answer 7.const Inc_Arr = (array,N) => 
+ {
+ const result = array.map((N)=>N+1);
+ console.log(...result);
+ };
+ Question 8.Pass or Fail
+ You are given an array A
+  containing the maths marks of students in your class, and your task is to determine if all the students pass in your class or not. A student is declared pass if his maths marks are greater than or equal to 32.
+ If all the students pass in your class, return "YES" (without quotes); otherwise, return "NO" (without quotes).
+ Answer 8.const isAllPass = (N, Arr) => {
+    Arr.sort();
+    for (let i = 0; i <= Arr.length; i++) {
+        if (Arr[i] >= 32) {
+            return "YES";
+        }
+        else {
+            return "NO";
+        }
+    }
+};
+Question 9.Unique Color Shirt
+Prepbuddy is very tasteful of clothes. 
+He has N numbers of shirts hanging in the hanger in his wardrobe.
+Prepbuddy likes to wear different colored clothes. So, whenever he see there are two or more shirts with the same color, he removes all the shirt of that color from his wardrobe. Now, he wants to know how many M unique color shirts are left in the wardrobe. 
+Prepbuddy wants you to find M.
+Answer 9.function Unique_Shirts (arr,N) {
+    let unique=arr.filter((value)=>arr.indexOf(value)===arr.lastIndexOf(value))
+    return (unique.length);
+   }
+   Question 10.in and Max
+   Congratulations on making up to this question. Let us give you a fairly simple array problem to solve. If you know how to iterate through the array, you will easily be able to solve this.
+   The problem statement is simple- given 
+   N     elements, find the minimum and maximum numbers among those elements.
+   Answer 10.  
+   function arrayMin(arr) {
+        return Math.min(...arr);
+  }
+  
+  function arrayMax(arr) {
+      return Math.max(...arr);
+    }
+    Question 11.Birthday Game
+    Yatharth and Anamika are playing a game. Anamika loves Yatharth very much and she wants to share a chocolate bar with him in which each of the squares consists of an integer represented by 
+    A[i].She decides to share a contiguous segment of the chocolate bar selected such that the length of the segment matches Yatharth's birth month Mand the sum of the integers on the s quares is equal to his birthday D. 
+    You must determine how many ways she can divide the chocolate.
+    Answer 11. 
+    function Birthday_Game(arr,D ,M) {
+     let counter = 0;
+             for(let i = 0; i < arr.length - 1; i++){
+                  let subArray = arr.slice(i, i+M);
+                  if (subArray.length === M) {
+                     let sum = subArray.reduce((a,b) => a + b, 0);
+                     if(sum === D){
+                          counter += 1;
+                      }
+                   }
+             }
+             return counter;
+    }
+        
+</pre>
+</body>
+</html>
